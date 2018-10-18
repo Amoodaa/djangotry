@@ -10,6 +10,7 @@
     <title>Solid State by HTML5 UP</title>
     <meta charset="utf-8"/>
     {% load static %}
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="{% static  'assets/css/main.css' %}"/>
     <noscript>
@@ -52,15 +53,15 @@
             <p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
         </div>
     </section>
-
     <!-- Wrapper -->
     <section id="wrapper">
         {% for i in articles1 %}
 
             <!-- One -->
             <section
-                    id={% cycle "one" "two" "three" %} class={% cycle 'wrapper spotlight style1' 'wrapper alt spotlight style2' 'wrapper spotlight style3' %}>
+                    id={% cycle "one" "two" "three" %} class={% cycle "wrapper spotlight style1" "wrapper alt spotlight style2" "wrapper spotlight style3" %}>
                 <div class="inner">
+                          <a href="#" class="image"><img src="{% static i.image.name%}" alt="" /></a>
                     <div class="content">
                         <h2 class="major">{{ i.title }}</h2>
                         <p>{{ i.subtitle }}</p>
@@ -110,13 +111,14 @@
                 <section class="features">
                     {% for i in articles2 %}
                         <article>
-                            <a href="#" class="image"><img src="{% static  '/images/pic04.jpg' %}" alt=""/></a>
+                    <a href="#" class="image"><img src="{% static i.image.name%}" alt="" /></a>
                             <h3 class="major">{{ i.title }}</h3>
                             <p>{{ i.subtitle }}.</p>
                             <a href="article/{{ i.id }}" class="special">Learn more</a>
                         </article>
                     {% endfor %}
                 </section>
+                <form action="" method="post">{{ form1 }}</form>
 
                 {% comment %}
 						<article>

@@ -1,5 +1,5 @@
+from django.conf.global_settings import MEDIA_ROOT
 from django.db import models
-from nicelookingNewsSite.settings import MEDIA_ROOT
 
 
 # Create your models here.
@@ -12,3 +12,4 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
